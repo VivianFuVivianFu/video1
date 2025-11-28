@@ -7,10 +7,13 @@ Successfully generated a polished, realistic video demo showcasing a Luma chat c
 ## 📹 Final Output
 
 **Location:** [demo/luma_chat_demo.mp4](demo/luma_chat_demo.mp4)
-**File Size:** 4.9 MB
+**File Size:** 1.7 MB (optimized for web)
 **Duration:** 60 seconds
 **Resolution:** 720x1280 (mobile vertical)
 **Frame Rate:** 24 fps
+**Encoding:** H.264 Main profile, level 3.1, yuv420p
+**Audio:** AAC 128k, 48kHz stereo
+**Web Optimized:** ✅ FastStart enabled for streaming
 
 ## 🎨 What Was Built
 
@@ -130,9 +133,12 @@ Edit [src/theme.ts](src/theme.ts) to change:
 | Duration | 60 seconds |
 | Resolution | 720x1280 (9:16) |
 | Frame Rate | 24 fps |
-| Codec | H.264 |
-| File Size | 4.9 MB |
-| Concurrency | 2x (optimized) |
+| Video Codec | H.264 Main profile, level 3.1 |
+| Pixel Format | yuv420p (web compatible) |
+| Audio Codec | AAC-LC 128kbps, 48kHz stereo |
+| File Size | 1.7 MB (optimized) |
+| Streaming | FastStart enabled |
+| Browser Support | ✅ All modern browsers, Vercel compatible |
 
 ## 🎬 Next Steps (Optional)
 
