@@ -1,7 +1,10 @@
 node_modules/
 dist/
-demo/
 out/
 .DS_Store
 *.log
 .remotion/
+
+# Allow demo video to be committed
+!demo/
+!demo/*.mp4
