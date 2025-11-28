@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luma Chat Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #F8F7FC 0%, #E8E6F5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2D2B3E;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #8B7FD8 0%, #E8B4F0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        p {
+            color: #6B6880;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 40px;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: #000;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #8B7FD8 0%, #E8B4F0 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 16px rgba(139, 127, 216, 0.3);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 127, 216, 0.4);
+        }
+
+        .button.secondary {
+            background: white;
+            color: #8B7FD8;
+            border: 2px solid #8B7FD8;
+        }
+
+        .specs {
+            margin-top: 60px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            text-align: left;
+        }
+
+        .specs h3 {
+            color: #2D2B3E;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .spec-item {
+            padding: 12px;
+            background: #F8F7FC;
+            border-radius: 8px;
+        }
+
+        .spec-item strong {
+            display: block;
+            color: #8B7FD8;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .spec-item span {
+            color: #2D2B3E;
+            font-size: 14px;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Luma Chat Demo</h1>
+        <p>A 60-second therapeutic conversation showcasing Luma's evidence-based approach to mental wellness</p>
+
+        <div class="video-container">
+            <video
+                controls
+                playsinline
+                preload="metadata"
+                id="lumaVideo"
+            >
+                <source src="./demo/luma_chat_demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="buttons">
+            <a href="https://github.com/VivianFuVivianFu/video1" class="button" target="_blank">
+                📦 View on GitHub
+            </a>
+            <a href="./demo/luma_chat_demo.mp4" class="button secondary" download>
+                ⬇️ Download Video
+            </a>
+        </div>
+
+        <div class="specs">
+            <h3>Technical Specifications</h3>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <strong>Duration</strong>
+                    <span>60 seconds</span>
+                </div>
+                <div class="spec-item">
+                    <strong>Resolution</strong>
+                    <span>720×1280 (9:16)</span>
+                </div>
+                <div class="spec-item">
+                    <strong>File Size</strong>
+                    <span>1.7 MB</span>
+                </div>
+                <div class="spec-item">
+                    <strong>Video Codec</strong>
+                    <span>H.264 Main</span>
+                </div>
+                <div class="spec-item">
+                    <strong>Audio Codec</strong>
+                    <span>AAC 128kbps</span>
+                </div>
+                <div class="spec-item">
+                    <strong>Compatibility</strong>
+                    <span>All modern browsers</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add error handling for video
+        const video = document.getElementById('lumaVideo');
+
+        video.addEventListener('error', function(e) {
+            console.error('Video error:', e);
+            console.error('Video error code:', video.error ? video.error.code : 'unknown');
+            console.error('Video error message:', video.error ? video.error.message : 'unknown');
+        });
+
+        video.addEventListener('loadedmetadata', function() {
+            console.log('Video loaded successfully');
+            console.log('Duration:', video.duration);
+            console.log('Video dimensions:', video.videoWidth, 'x', video.videoHeight);
+        });
+    </script>
+</body>
+</html>
