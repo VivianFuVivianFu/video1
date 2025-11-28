@@ -1,6 +1,15 @@
 # Luma Video Demo Generator
 
-This project generates a polished 60-90 second video demo showcasing a Luma chat conversation.
+This project generates a polished 60-second video demo showcasing a Luma chat conversation.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/VivianFuVivianFu/video1)
+
+## 🎬 Live Demo
+
+- **Video:** [View Demo Video](./demo/luma_chat_demo.mp4)
+- **Size:** 1.7 MB (web-optimized)
+- **Format:** H.264 Main, AAC audio
+- **Duration:** 60 seconds
 
 ## Project Structure
 
@@ -44,10 +53,12 @@ The final video will be exported to: `demo/luma_chat_demo.mp4`
 
 ## Video Specifications
 
-- **Duration**: ~95 seconds
-- **Resolution**: 1080x1920 (vertical/mobile format)
-- **Frame Rate**: 30 fps
-- **Format**: MP4
+- **Duration**: 60 seconds
+- **Resolution**: 720x1280 (vertical/mobile format)
+- **Frame Rate**: 24 fps
+- **Format**: MP4 (H.264 Main, AAC 128k)
+- **File Size**: 1.7 MB
+- **Compatibility**: All modern browsers, Vercel-ready
 
 ## Features
 
@@ -64,3 +75,27 @@ The final video will be exported to: `demo/luma_chat_demo.mp4`
 - **Conversation**: Edit `src/conversation.ts` to modify messages and timing
 - **Styling**: Update `src/theme.ts` for colors, fonts, and spacing
 - **Video Settings**: Modify `remotion.config.ts` for resolution and duration
+
+## Deployment
+
+### Deploy to Vercel
+
+1. Click the "Deploy with Vercel" button above, or
+2. Follow the guide in [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)
+
+The demo page will be automatically deployed with the video embedded.
+
+### Local Testing
+
+```bash
+# Serve the demo page locally
+npx serve .
+
+# Open http://localhost:3000
+```
+
+## Documentation
+
+- **[PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)** - Complete project overview
+- **[VIDEO_FIX_NOTES.md](./VIDEO_FIX_NOTES.md)** - Video compatibility fixes
+- **[VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)** - Deployment guide
